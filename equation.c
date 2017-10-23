@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+void f(){
 	double x,y,a,b,c,d,e,f;
 	//ax+by=e,cx+dy=f
 	printf("Please enter six parameters of two equations.");
@@ -15,6 +15,11 @@ int main(){
 		y=(e*c-a*f)/(b*c-a*d);
 		printf("x=%lf,y=%lf\n",x,y);
 	}
+	
+}
+
+int main(){
+	f();
 	
 	return 0;
 }
