@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+void f(double n);
+void test();
+
+int main(){
+//	f(2);
+//	f(5);
+//	f(0);
+	test();
+	
+	return 0;
+} 
+
+void f(double n){
+	double low=0,high=n,mid,delta;
+	double error=0.01;
+	if(n<0){
+		printf("ERROR\n");
+		return;
+	}
+	do{
+		mid=(low+high)/2;
+		delta=mid*mid-n;
+		if(delta>0){
+			high=mid;
+		}
+		else{
+			low=mid;
+		}
+	}while(fabs(delta)>error);
+	
+	printf("%.2lf\n",mid);
+}
+
+void test(){
+	int num;
+	scanf("%d",&num);
+	
+	int i,x;
+	for(i=0;i<num;i++){
+		scanf("%d",&x);
+		f(x);
+	}
+}
